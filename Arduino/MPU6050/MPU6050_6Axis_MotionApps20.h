@@ -417,14 +417,14 @@ uint8_t MPU6050::dmpInitialize() {
             setOTPBankValid(false);
 
             DEBUG_PRINTLN(F("Setting X/Y/Z gyro offset TCs to previous values..."));
-            setXGyroOffsetTC(xgOffsetTC);
-            setYGyroOffsetTC(ygOffsetTC);
-            setZGyroOffsetTC(zgOffsetTC);
+            setXGyroOffsetTC(xgOffset);
+            setYGyroOffsetTC(ygOffset);
+            setZGyroOffsetTC(zgOffset);
 
-            //DEBUG_PRINTLN(F("Setting X/Y/Z gyro user offsets to zero..."));
-            //setXGyroOffset(0);
-            //setYGyroOffset(0);
-            //setZGyroOffset(0);
+            DEBUG_PRINTLN(F("Setting X/Y/Z gyro user offsets to zero..."));
+            setXGyroOffset(0);
+            setYGyroOffset(0);
+            setZGyroOffset(0);
 
             DEBUG_PRINTLN(F("Writing final memory update 1/7 (function unknown)..."));
             uint8_t dmpUpdate[16], j;
